@@ -6,7 +6,7 @@
       yum: name=nginx state=installed
  
     - name: be sure a listen port of nginx is 8001
-      command: sed -i "s/listen.*;$/listen 8001 default_server;/g" /etc/nginx/conf.d/default.conf
+      command: sed -i "s/listen.*80;$/listen 8001;/g" /etc/nginx/nginx.conf
 
     - name: be sure nginx is running and enabled
       service: name=nginx state=running enabled=yes
